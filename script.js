@@ -448,7 +448,7 @@ function openGlyphModal(index, glyph) {
     canvas.addEventListener("contextmenu", (event) => {
         event.preventDefault();
     });
-    popup.document.body.innerHTML = "\"" + String.fromCharCode(index) + "\"" + "</br>";
+    popup.document.body.innerHTML = "\"" + cp437Table[index] + "\"" + "</br>";
     popup.document.body.appendChild(canvas);
 	const style = popup.document.createElement("style");
 	style.textContent = `
