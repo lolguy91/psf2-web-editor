@@ -4,15 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const glyphModal = document.getElementById("glyph-modal");
   const saveButton = document.getElementById("save-button");
   let psfData;
-
-	const style = document.createElement("style");
-	style.textContent = `
-	    body {
-	        background-color: #000; /* Set background color of the entire screen to black */	
- 	       color: #fff; /* Set text color to white */
-	    }
-	`;
-	document.head.appendChild(style);
+  const style = document.createElement("style");
+  style.textContent = `
+	body {
+	   background-color: #000; /* Set background color of the entire screen to black */	
+ 	   color: #fff; /* Set text color to white */
+	}
+   `;
+   document.head.appendChild(style);
 
   fileInput.addEventListener("change", handleFileUpload);
   saveButton.addEventListener("click", savePSF);
@@ -350,7 +349,7 @@ function regenerateThumbnail(glyph,index) {
         }
         // Add text label with corresponding letter
         context.font = "16px Arial";
-        context.fillStyle = "#F00";
+        context.fillStyle = "#000";
         context.textAlign = "center";
         context.fillText("\"" + cp437Table[index] + "\"", canvas.width / 2, canvas.height - 3);
 }
@@ -470,7 +469,7 @@ function openGlyphModal(index, glyph) {
 
 function generatePSF(glyphs) {
     const headerSize = 32;
-    const numGlyphs = glyphs.length;
+    const numGlyphs = glyphs.length();
     const bytesPerGlyph = glyphs[0].bitmap.byteLength;
 
     const header = new Uint8Array(headerSize);
