@@ -469,7 +469,7 @@ function openGlyphModal(index, glyph) {
 
 function generatePSF(glyphs) {
     const headerSize = 32;
-    const numGlyphs = glyphs.length();
+    const numGlyphs = glyphs.length;
     const bytesPerGlyph = glyphs[0].bitmap.byteLength;
 
     const header = new Uint8Array(headerSize);
